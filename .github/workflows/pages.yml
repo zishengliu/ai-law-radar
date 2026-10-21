@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Every day at 01:27 UTC = 09:27 Beijing/Singapore time. Offset from common cron start times.
-    - cron: '27 1 * * *'
+    # Every day at 01:00 UTC = 09:00 Beijing/Singapore time.
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:
