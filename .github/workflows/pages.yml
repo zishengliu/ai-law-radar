@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Every day at 01:00 UTC = 09:00 Beijing/Singapore time.
-    - cron: '0 1 * * *'
+    # Every day at 01:17 UTC = 09:17 Beijing/Singapore time; avoid the top-of-hour Actions load peak.
+    - cron: '17 1 * * *'
   workflow_dispatch:
 
 permissions:
