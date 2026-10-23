@@ -38,7 +38,7 @@
     }
   ],
   "item_count": 35,
-  "new_count": 0,
+  "new_count": 3,
   "seen_ids": [
     "fb9e7e3444f28a54e31b",
     "e260a9265051b29cda53",
@@ -266,7 +266,7 @@
       "focus": "进一步核对文件效力层级、适用对象、生效时间与配套规则。",
       "priority": "中",
       "query_group": "中国政府网",
-      "is_new": false,
+      "is_new": true,
       "is_sample": false
     },
     {
@@ -280,7 +280,7 @@
       "focus": "进一步核对文件效力层级、适用对象、生效时间与配套规则。",
       "priority": "中",
       "query_group": "中国政府网",
-      "is_new": false,
+      "is_new": true,
       "is_sample": false
     },
     {
@@ -294,7 +294,7 @@
       "focus": "进一步核对文件效力层级、适用对象、生效时间与配套规则。",
       "priority": "中",
       "query_group": "中国政府网",
-      "is_new": false,
+      "is_new": true,
       "is_sample": false
     },
     {
