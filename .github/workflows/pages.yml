@@ -4,8 +4,11 @@ on:
   push:
     branches: [main]
   schedule:
-    # Every day at 01:17 UTC = 09:17 Beijing/Singapore time; avoid the top-of-hour Actions load peak.
+    # Primary refresh: 09:17 Singapore/Beijing time (01:17 UTC), away from the top of the hour.
     - cron: '17 1 * * *'
+    # Backup refreshes in case GitHub misses a scheduled event: 09:47 and 10:17 local time.
+    - cron: '47 1 * * *'
+    - cron: '17 2 * * *'
   workflow_dispatch:
 
 permissions:
