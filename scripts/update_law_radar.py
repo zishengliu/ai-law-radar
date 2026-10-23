@@ -180,7 +180,7 @@ def main():
     data = {
         "project":"AI 法规雷达", "generated_at":now, "status":status,
         "source_method":"Google News RSS search with queries restricted to official Chinese government and judicial domains",
-        "schedule":"Daily at 01:15 UTC (09:15 Asia/Singapore)",
+        "schedule":"Daily refresh at 09:17 Asia/Singapore/Beijing time, with backup refreshes at 09:47 and 10:17",
         "source_errors":errors, "sources":source_stats, "item_count":len(items),
         "new_count":sum(1 for x in items if x.get("is_new")) if status in ("live", "partial") else 0,
         "seen_ids":list(seen)[-5000:], "items":items,
