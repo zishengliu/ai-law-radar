@@ -127,6 +127,12 @@ def main():
     previous = read_previous()
     seen = set(previous.get("seen_ids", []))
     previous_items = previous.get("items", []) if isinstance(previous.get("items", []), list) else []
+    previous_generated_date = str(previous.get("generated_at", ""))[:10]
+    current_local_date = datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+    previous_new_today = {
+        item.get("id") for item in previous_items
+        if item.get("id") and item.get("is_new") and previous_generated_date == current_local_date
+    }
     errors, source_stats, fresh = [], [], {}
     print("AI 法规雷达：开始每日抓取")
     for label, query in QUERIES:
@@ -165,7 +171,8 @@ def main():
                     parsed = parsed.replace(tzinfo=timezone.utc)
                 if parsed < cutoff:
                     continue
-            item["is_new"] = item["id"] not in seen
+            # Keep items newly discovered earlier today marked as new during backup refreshes.
+            item["is_new"] = item["id"] not in seen or item["id"] in previous_new_today
             item["is_sample"] = False
             items.append(item)
         items.sort(key=lambda x:x.get("date", ""), reverse=True)
